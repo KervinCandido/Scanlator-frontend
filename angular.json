@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "Scanlator"
+  "defaultProject": "Scanlator",
+  "cli": {
+    "analytics": "0317bee7-5752-492c-b66d-9d6d0b41e70a"
+  }
 }
