@@ -1,0 +1,70 @@
+<div class="modal-header">
+  <h4 class="modal-title">Sign Up</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form #form="ngForm" class="modal-body" [formGroup]="signUpForm">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input #nameInput formControlName="name" type="text" class="form-control" id="name" placeholder="your name">
+    <sl-vmessage
+      *ngIf="signUpForm.get('name')?.errors?.required && (form.submitted || signUpForm.get('name')?.touched)"
+      text="Name is required"
+    ></sl-vmessage>
+    <sl-vmessage
+      *ngIf="signUpForm.get('name')?.errors?.minlength && (form.submitted || signUpForm.get('name')?.touched)" class="mb-3"
+      text="Name minimum length is 3"
+    ></sl-vmessage>
+    <sl-vmessage
+      *ngIf="signUpForm.get('name')?.errors?.maxlength && (form.submitted || signUpForm.get('name')?.touched)" class="mb-3"
+      text="Name maximum length is 20"
+    ></sl-vmessage>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" formControlName="email" class="form-control" id="email" placeholder="yourname@domain.com">
+    <sl-vmessage
+      *ngIf="signUpForm.get('email')?.errors?.required && (form.submitted || signUpForm.get('email')?.touched)"
+      text="E-mail is required"></sl-vmessage>
+    <sl-vmessage
+      *ngIf="signUpForm.get('email')?.errors?.email && (form.submitted || signUpForm.get('email')?.touched)"
+      text="E-mail is invalid"></sl-vmessage>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" formControlName="password" class="form-control" id="password" placeholder="password">
+    <sl-vmessage
+      *ngIf="signUpForm.get('password')?.errors?.required && (form.submitted || signUpForm.get('password')?.touched)"
+      text="Password is required"
+    ></sl-vmessage>
+    <sl-vmessage
+      *ngIf="signUpForm.get('password')?.errors?.minlength && (form.submitted || signUpForm.get('password')?.touched)"
+      text="Password minimum length is 6"
+    ></sl-vmessage>
+    <sl-vmessage
+      *ngIf="signUpForm.get('password')?.errors?.maxlength && (form.submitted || signUpForm.get('password')?.touched)"
+      text="Password maximum length is 20"
+    ></sl-vmessage>
+  </div>
+  <div class="mb-3">
+    <label for="confirm-password" class="form-label">Confirm Password</label>
+    <input type="password" formControlName="confirmPassword" class="form-control" id="confirm-password" placeholder="password">
+    <sl-vmessage
+      *ngIf="signUpForm.get('confirmPassword')?.errors?.required && (form.submitted || signUpForm.get('confirmPassword')?.touched)"
+      text="Confirm Password is required"
+    ></sl-vmessage>
+    <sl-vmessage
+      *ngIf="signUpForm.get('confirmPassword')?.errors?.minlength && (form.submitted || signUpForm.get('confirmPassword')?.touched)"
+      text="Confirm Password minimum length is 6"
+    ></sl-vmessage>
+    <sl-vmessage
+      *ngIf="signUpForm.get('confirmPassword')?.errors?.maxlength && (form.submitted || signUpForm.get('confirmPassword')?.touched)"
+      text="Confirm Password maximum length is 20"
+    ></sl-vmessage>
+  </div>
+  <div class="d-grid gap-1 col-3 mx-auto">
+    <button type="button" class="btn btn-outline-primary btn-lg">Save</button>
+  </div>
+</form>
+

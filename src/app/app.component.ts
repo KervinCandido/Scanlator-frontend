@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SignUpComponent } from './home/sign-up/sign-up.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Scanlator';
+
+  constructor(private modalService: NgbModal) {}
+
+  open() {
+    this.modalService.open(SignUpComponent);
+  }
 }
