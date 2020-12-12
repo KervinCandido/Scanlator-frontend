@@ -1,6 +1,11 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { confirmPassword } from './confirm-password';
+import { SignUp } from './SignUp';
+import { SignUpAdapter } from './SignUpAdapter';
+
+import { SignUpForm } from './SignUpForm';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,7 +18,7 @@ export class SignUpComponent implements OnInit, AfterViewInit {
     name: ['', [
         Validators.required,
         Validators.minLength(3),
-        Validators.maxLength(20)
+        Validators.maxLength(60)
       ]
     ],
     email: ['', [
@@ -33,6 +38,8 @@ export class SignUpComponent implements OnInit, AfterViewInit {
         Validators.maxLength(20)
       ]
     ]
+  }, {
+    validators: [confirmPassword]
   })
 
   @ViewChild('nameInput')
@@ -50,4 +57,12 @@ export class SignUpComponent implements OnInit, AfterViewInit {
     this.nameInput?.nativeElement.focus();
   }
 
+  signUp() {
+    console.log('asa')
+    if (this.signUpForm.invalid || this.signUpForm.pending) return;
+
+    const signUpForm = this.signUpForm.getRawValue() as SignUpForm;
+    const signUp: SignUp = new SignUpAdapter(signUpForm);
+    console.log(signUpForm, signUp)
+  }
 }
