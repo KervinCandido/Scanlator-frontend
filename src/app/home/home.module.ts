@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VmessageModule } from '../share/component/vmessage/vmessage.module';
+import { SignUpService } from './sign-up/sign-up.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -11,7 +13,11 @@ import { VmessageModule } from '../share/component/vmessage/vmessage.module';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    VmessageModule
+    VmessageModule,
+    HttpClientModule
+  ],
+  providers: [
+    SignUpService
   ]
 })
 export class HomeModule { }

@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { confirmPassword } from './confirm-password';
+import { SignUpService } from './sign-up.service';
 import { SignUp } from './SignUp';
 import { SignUpAdapter } from './SignUpAdapter';
 
@@ -47,6 +48,7 @@ export class SignUpComponent implements OnInit, AfterViewInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private signUpService: SignUpService,
     public activeModal: NgbActiveModal
   ) {}
 
@@ -58,11 +60,12 @@ export class SignUpComponent implements OnInit, AfterViewInit {
   }
 
   signUp() {
-    console.log('asa')
     if (this.signUpForm.invalid || this.signUpForm.pending) return;
 
     const signUpForm = this.signUpForm.getRawValue() as SignUpForm;
     const signUp: SignUp = new SignUpAdapter(signUpForm);
-    console.log(signUpForm, signUp)
+
+    this.signUpService.signUp(signUp)
+      .subscribe(() => console.log('sucessfull'), (err) => console.error(err))
   }
 }
