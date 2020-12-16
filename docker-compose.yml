@@ -1,0 +1,25 @@
+version: "3"
+services:
+  frontend:
+    container_name: "frontend"
+    build: .
+    ports:
+      - "4200:4200"
+      - "49153:49153"
+    volumes:
+      - ".:/usr/src/app"
+    networks:
+      - "minha-rede"
+    depends_on:
+      - backend
+  backend:
+    container_name: "backend"
+    image: scanlator
+    ports:
+      - "8080:8080"
+    networks:
+      - "minha-rede"
+networks:
+  minha-rede:
+    external:
+      name: "minha-rede"
