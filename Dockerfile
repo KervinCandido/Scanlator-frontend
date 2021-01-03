@@ -1,6 +1,6 @@
-FROM node:latest AS build
+FROM node:14.15.3
 WORKDIR /usr/src/app
-COPY package.json package-lock.json ./
+COPY package.json ./
 RUN npm install
 COPY . .
 EXPOSE 4200 49153
