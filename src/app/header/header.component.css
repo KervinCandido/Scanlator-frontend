@@ -18,6 +18,11 @@
   cursor: pointer;
 }
 
+.sc-header .sc-nav-menu h1 a {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
 .sc-header .sc-nav-menu h1 .sc-line {
   position: absolute;
   height: 1px;
