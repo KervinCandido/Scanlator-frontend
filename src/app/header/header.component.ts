@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faSignInAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @Component({
   selector: 'sc-header',
@@ -9,10 +11,16 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent implements OnInit {
 
   faUserCircle = faUserCircle;
+  faSignInAlt = faSignInAlt;
 
-  constructor() { }
+  constructor(
+      private modalService: NgbModal
+    ) { }
 
   ngOnInit(): void {
   }
 
+  open() {
+    const modalRef = this.modalService.open(SignInComponent);
+  }
 }

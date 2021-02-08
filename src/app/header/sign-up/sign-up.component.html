@@ -15,18 +15,18 @@
       placeholder="your name"
       [class.is-invalid]="signUpForm.get('name')?.errors && (form.submitted || signUpForm.get('name')?.touched)"
       [class.is-valid]="signUpForm.get('name')?.valid"/>
-    <sl-vmessage
+    <sc-vmessage
       *ngIf="signUpForm.get('name')?.errors?.required && (form.submitted || signUpForm.get('name')?.touched)"
       text="Name is required"
-    ></sl-vmessage>
-    <sl-vmessage
+    ></sc-vmessage>
+    <sc-vmessage
       *ngIf="signUpForm.get('name')?.errors?.minlength && (form.submitted || signUpForm.get('name')?.touched)" class="mb-3"
       text="Name minimum length is 3"
-    ></sl-vmessage>
-    <sl-vmessage
+    ></sc-vmessage>
+    <sc-vmessage
       *ngIf="signUpForm.get('name')?.errors?.maxlength && (form.submitted || signUpForm.get('name')?.touched)" class="mb-3"
       text="Name maximum length is 60"
-    ></sl-vmessage>
+    ></sc-vmessage>
   </div>
   <div class="mb-3">
     <label for="email" class="form-label">E-mail</label>
@@ -38,12 +38,12 @@
       placeholder="yourname@domain"
       [class.is-invalid]="signUpForm.get('email')?.errors && (form.submitted || signUpForm.get('email')?.touched)"
       [class.is-valid]="signUpForm.get('email')?.valid"/>
-    <sl-vmessage
+    <sc-vmessage
       *ngIf="signUpForm.get('email')?.errors?.required && (form.submitted || signUpForm.get('email')?.touched)"
-      text="E-mail is required"></sl-vmessage>
-    <sl-vmessage
+      text="E-mail is required"></sc-vmessage>
+    <sc-vmessage
       *ngIf="signUpForm.get('email')?.errors?.email && (form.submitted || signUpForm.get('email')?.touched)"
-      text="E-mail is invalid"></sl-vmessage>
+      text="E-mail is invalid"></sc-vmessage>
   </div>
   <div class="mb-3">
     <label for="password" class="form-label">Password</label>
@@ -55,18 +55,18 @@
       placeholder="password"
       [class.is-invalid]="signUpForm.get('password')?.errors && (form.submitted || signUpForm.get('password')?.touched)"
       [class.is-valid]="signUpForm.get('password')?.valid"/>
-    <sl-vmessage
+    <sc-vmessage
       *ngIf="signUpForm.get('password')?.errors?.required && (form.submitted || signUpForm.get('password')?.touched)"
       text="Password is required"
-    ></sl-vmessage>
-    <sl-vmessage
+    ></sc-vmessage>
+    <sc-vmessage
       *ngIf="signUpForm.get('password')?.errors?.minlength && (form.submitted || signUpForm.get('password')?.touched)"
       text="Password minimum length is 6"
-    ></sl-vmessage>
-    <sl-vmessage
+    ></sc-vmessage>
+    <sc-vmessage
       *ngIf="signUpForm.get('password')?.errors?.maxlength && (form.submitted || signUpForm.get('password')?.touched)"
       text="Password maximum length is 20"
-    ></sl-vmessage>
+    ></sc-vmessage>
   </div>
   <div class="mb-3">
     <label for="confirm-password" class="form-label">Confirm Password</label>
@@ -79,22 +79,22 @@
       [class.is-invalid]="(signUpForm.get('confirmPassword')?.errors || signUpForm.errors?.confirmPassword) &&
           (form.submitted || signUpForm.get('confirmPassword')?.value || signUpForm.get('confirmPassword')?.touched)"
       [class.is-valid]="signUpForm.get('confirmPassword')?.valid && signUpForm.valid"/>
-    <sl-vmessage
+    <sc-vmessage
       *ngIf="signUpForm.get('confirmPassword')?.errors?.required && (form.submitted || signUpForm.get('confirmPassword')?.touched)"
       text="Confirm Password is required"
-    ></sl-vmessage>
-    <sl-vmessage
+    ></sc-vmessage>
+    <sc-vmessage
       *ngIf="signUpForm.get('confirmPassword')?.errors?.minlength && (form.submitted || signUpForm.get('confirmPassword')?.value)"
       text="Confirm Password minimum length is 6"
-    ></sl-vmessage>
-    <sl-vmessage
+    ></sc-vmessage>
+    <sc-vmessage
       *ngIf="signUpForm.get('confirmPassword')?.errors?.maxlength && (form.submitted || signUpForm.get('confirmPassword')?.value)"
       text="Confirm Password maximum length is 20"
-    ></sl-vmessage>
-    <sl-vmessage
+    ></sc-vmessage>
+    <sc-vmessage
       *ngIf="signUpForm.errors?.confirmPassword"
       text="Confirm password is different from password"
-    ></sl-vmessage>
+    ></sc-vmessage>
   </div>
   <div class="d-grid gap-1 col-3 mx-auto">
     <button type="submit"

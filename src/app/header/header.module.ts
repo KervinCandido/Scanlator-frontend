@@ -8,11 +8,13 @@ import { SignUpService } from './sign-up/sign-up.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    SignUpComponent
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     CommonModule,

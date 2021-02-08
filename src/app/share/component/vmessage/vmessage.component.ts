@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sl-vmessage',
+  selector: 'sc-vmessage',
   templateUrl: './vmessage.component.html',
   styleUrls: ['./vmessage.component.css']
 })
