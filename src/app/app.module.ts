@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { HomeModule } from './home/home.module';
+import { HeaderModule } from './header/header.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -13,9 +15,11 @@ import { HomeModule } from './home/home.module';
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     AppRoutingModule,
     NgbModule,
-    HomeModule
+    HomeModule,
+    HeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

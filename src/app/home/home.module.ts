@@ -1,23 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignUpComponent } from '../header/sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VmessageModule } from '../share/component/vmessage/vmessage.module';
-import { SignUpService } from './sign-up/sign-up.service';
+import { SignUpService } from '../header/sign-up/sign-up.service';
 import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
-  declarations: [SignUpComponent],
+  declarations: [],
   imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    VmessageModule,
-    HttpClientModule
+    CommonModule
   ],
   providers: [
-    SignUpService
+
   ]
 })
 export class HomeModule { }

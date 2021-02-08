@@ -9,7 +9,7 @@ import { SignUpAdapter } from './SignUpAdapter';
 import { SignUpForm } from './SignUpForm';
 
 @Component({
-  selector: 'app-sign-up',
+  selector: 'sc-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
