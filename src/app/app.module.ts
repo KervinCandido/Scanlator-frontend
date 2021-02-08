@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeModule } from './home/home.module';
 import { HeaderModule } from './header/header.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProjectsModule } from './projects/projects.module';
 
 @NgModule({
   declarations: [
@@ -18,8 +19,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FontAwesomeModule,
     AppRoutingModule,
     NgbModule,
+    HeaderModule,
     HomeModule,
-    HeaderModule
+    ProjectsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

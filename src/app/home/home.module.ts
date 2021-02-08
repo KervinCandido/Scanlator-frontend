@@ -5,11 +5,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { VmessageModule } from '../share/component/vmessage/vmessage.module';
 import { SignUpService } from '../header/sign-up/sign-up.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [HomeComponent],
   imports: [
     CommonModule
   ],
