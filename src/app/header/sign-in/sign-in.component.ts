@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -9,7 +9,17 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class SignInComponent implements OnInit {
 
   signInForm = this.formBuilder.group({
-
+    email: ['', [
+        Validators.required,
+        Validators.email
+      ]
+    ],
+    password: ['', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(20)
+      ]
+    ]
   });
 
   @ViewChild('emailInput')
