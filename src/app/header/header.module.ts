@@ -9,6 +9,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { SignInService } from './sign-in/sign-in.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     HeaderComponent
   ],
   providers: [
-    SignUpService
+    SignUpService,
+    SignInService
   ]
 })
 export class HeaderModule { }

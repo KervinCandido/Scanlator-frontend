@@ -4,7 +4,7 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-<form #form="ngForm" class="modal-body" [formGroup]="signInForm">
+<form #form="ngForm" class="modal-body" [formGroup]="signInForm" (submit)="signIn()">
   <div class="mb-3">
     <label for="email" class="form-label">E-mail</label>
     <input

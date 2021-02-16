@@ -1,6 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { SignInService } from './sign-in.service';
+import { SignInForm } from './SignInForm';
+import { SignInResponse } from './SignInResponse';
 
 @Component({
   templateUrl: './sign-in.component.html',
@@ -27,7 +30,8 @@ export class SignInComponent implements OnInit {
 
   constructor(
     public activeModal: NgbActiveModal,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private signInService: SignInService
   ) { }
 
   ngOnInit(): void {
@@ -35,5 +39,17 @@ export class SignInComponent implements OnInit {
 
   ngAfterViewInit(): void {
     this.emailInput?.nativeElement.focus();
+  }
+
+  signIn(): void {
+    const signInForm = this.signInForm.getRawValue() as SignInForm;
+    this.signInService.signIn(signInForm)
+      .subscribe((signIn: SignInResponse) => {
+        console.log('sucessfull', signIn)
+      }, (err) => {
+        if (err.status === 401) {
+          console.error(err)
+        }
+      });
   }
 }
